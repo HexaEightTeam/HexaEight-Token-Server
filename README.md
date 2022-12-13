@@ -165,7 +165,7 @@ c:\HexaEightTS>type appsettings.json
 
 ```
 --- 
-**HexaEight Token Server Does Not Require HTTPs except for fetching Encrypted Captcha's by sending the user Email address in plain text**
+**HexaEight Token Server Does Not Require HTTPs except for fetching Encrypted Captchas for user Email address (sent over the network in plain text)**
 
 If you wish to Enable HTTPs create a file called appsettings.json as shown below in the same HexaEight Token Server Directory with the below contents. Restart HexaEight Token Server for the change to take effect.
 
