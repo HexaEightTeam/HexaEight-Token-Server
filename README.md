@@ -1,4 +1,8 @@
 # HexaEight-Token-Server
+
+HexaEight Token Server issues Client Tokens which are Application specific Asymmetric shared keys to users and resource servers in order to encrypt information for authentication using HexaEight Sessions.  HexaEight Sessions uses a Token-less authentication approach to authenticate and autorize users. 
+For more information Visit [HexaEight](www.hexaeight.com)
+
 This Repository contains the links to the Latest Release of HexaEight Tokens. The Zip Files also contain HIC files required verify the authenticity of the Executables.
 
 ### HexaEight Token Server is currently available for the following Platforms
