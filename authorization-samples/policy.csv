@@ -1,0 +1,31 @@
+# HexaEight Token Server Authorization Policy File For Issuing Client Tokens (Application Asymmetric Shared Keys)
+
+# Define the Email users and EMail Domains that are allowed to login, fetch User info and Client Tokens
+# Define the Client Applications using the Client Hash to enforce specific Client Application to access the Token Server
+# Define if EMail users are allowed to contact other Email users and define the allowed permissions 
+# Define if EMail users are allowed to access Resource Servers 
+# Define the permissions for Resource Servers to fetch Client Tokens of EMail users to respond back to user requests.
+# Add Deny rules for any specific users who should not be issued Client Tokens.
+
+# Email Users And EMail Domains who are allowed to login (Required Definition : YES)
+p, /*@*.*, <tokenserver>, <clientid>, login
+
+# Email Users And EMail Domains who are allowed to request Client Tokens (Required Definition : YES)
+p, /*@*.*, <tokenserver>, <clientid>, ask
+
+# Email Users And EMail Domains who are allowed fetch user info using an Encrypted User ID (Required Definition : YES)
+p, /*@*.*, <tokenserver>, <clientid>, poke
+
+# The user-agent/Client Application which is allowed to request Client Tokens (Required Definition : YES)
+p, <clienthash>, <tokenserver>, <clientid>, clientaccess
+
+# Allow Resource Servers to Login and Fetch Client Tokens (Define this only if you have resource servers)
+p, <resources>, <tokenserver>, <clientid>, login
+p, <resources>, <emaildomain>, <clientid>, ask
+p, <resources>, <emaildomain>, <clientid>, poke
+p, <emaildomain>, <resources>, <clientid>, ask
+p, <emaildomain>, <resources>, <clientid>, poke
+
+# Add any specific deny rule (Define this only if you need to block some specific email user, email subdomain)
+p,<emailid>, <tokenserver>, <clientid>, deny
+p,<emaildomain>, <tokenserver>, <clientid>, deny
