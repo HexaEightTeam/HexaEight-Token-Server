@@ -1,0 +1,7 @@
+# Captcha Authorization Sample Policy File for issuing Encrypted Captchas
+
+# Define the Email address to deny access
+p,/*@tempr.email, <tokenserver>, CAPTCHA, deny
+
+# Allow Email Address or Domain to request for a Captcha
+p, /*@/*./*, <tokenserver>, CAPTCHA, enable
