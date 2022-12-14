@@ -8,13 +8,13 @@
 # Add Deny rules for any specific users who should not be issued Client Tokens.
 
 # Email Users And EMail Domains who are allowed to login (Required Definition : YES)
-p, /*@*.*, <tokenserver>, <clientid>, login
+p, /*@/*./*, <tokenserver>, <clientid>, login
 
 # Email Users And EMail Domains who are allowed to request Client Tokens (Required Definition : YES)
-p, /*@*.*, <tokenserver>, <clientid>, ask
+p, /*@/*./*, <tokenserver>, <clientid>, ask
 
 # Email Users And EMail Domains who are allowed fetch user info using an Encrypted User ID (Required Definition : YES)
-p, /*@*.*, <tokenserver>, <clientid>, poke
+p, /*@/*./*, <tokenserver>, <clientid>, poke
 
 # The user-agent/Client Application which is allowed to request Client Tokens (Required Definition : YES)
 p, <clienthash>, <tokenserver>, <clientid>, clientaccess
