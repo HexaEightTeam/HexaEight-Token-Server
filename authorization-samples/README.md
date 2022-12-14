@@ -25,17 +25,13 @@ Client ID : You will need to generate a Client ID for your Application using the
 
   Policy.csv - Sample authorization definitions that enforce who is allowed to login and fetch Client tokens
 
-  captchamodel.conf - Contains the Custom Access Model Definition for Enforcers used only for fetching Encrypted Captcha
-
-  captchapolicy.csv - Sample authorization definitions that enforce who is allowed to fetch Encrypted Captcha
-
 
 Model.conf and captchamodel does not require modifications and can directly be deployed on the token server.
 
 Policy.csv - Examine the sample entires provided and add entries to suit your environment. 
 The summary of entries required in the policy file are based on four questions. The fourth field in the below samples are CONSTANTS and should NOT be changed. 
 
-### 1. Which EMail Domain needs are allowed to login and fetch Client Tokens from your Token Server.
+### 1. Which EMail Domain are allowed to login and fetch Client Tokens from your Token Server?
 
 If you want to allow a specific domain, add an entry only for that domain, or else if you want to allow any domain use a wild card entry.
 
@@ -53,7 +49,9 @@ If you want to allow a specific domain, add an entry only for that domain, or el
   
 ```
   
-### 2. Which User Agents or Client Application are allowed to request Client Tokens on behalf of the user. In Authorzation terms, this is referreed to as the what part which can access your token server.  Each Client application is allowed based on a Client Hash Generated during application development.  If its a browser based application, the hostname where the application is hosted is the client hash. 
+### 2. Which User Agents or Client Application are allowed to request Client Tokens on behalf of the user? 
+
+In Authorzation terms, this is referred to as the what part which can access your token server.  Each Client application is allowed based on a Client Hash which can be generated after application development.  If its a browser based application, the hostname where the application is hosted is the client hash. 
 
 You can use * in the clienthash if you want to allow any Client, but we advise against doing this esp if you are hosting a browser based application, since anyone may be able to crawl your browser app and rehost at another location and use your token server. We prefer you use a * only during Application Development and switch to valid Client hashes when deploying it in Production.
 
@@ -65,7 +63,7 @@ You can use * in the clienthash if you want to allow any Client, but we advise a
   p, <clienthash>, <tokenserver>, <clientid>, clientaccess
 ```
 
-### 3. Which Reesource Servers Or Email users are allowed to fetch Client Tokens of other Resource servers or EMail users. 
+### 3. Which Reesource Servers Or Email users are allowed to fetch Client Tokens of other Resource servers or EMail users? 
 
 To better understand this question, assume you are developing a chat application, here you want every email user to talk to every other email user. Similarly if you have a chatbot resource server, you want every email user to be able to talk to the chatbot, similarly the chatbot also needs to be able to talk back to the email user, so you need to add approprate entries for all the scenario like shown below. 
 
@@ -88,3 +86,24 @@ There are times, you want to disallow a certain section of users from being able
   p,<emaildomain>, <tokenserver>, <clientid>, deny  
 
 ```
+
+---
+
+  captchamodel.conf - Contains the Custom Access Model Definition for Enforcers used only for fetching Encrypted Captcha
+
+  captchapolicy.csv - Sample authorization definitions that enforce who is allowed to fetch Encrypted Captcha
+
+Similar to the model.conf and policy.conf there is a captchamodel.conf and captchapolicy.csv file which contains the enforcement definitions on which set of users are allowed to fetch encrypted captcha to login to the application. 
+
+**Note : Resource Serves DO NOT Use Captcha to login to the application, so only email domain ALLOW AND DENY entires are required in the captchapolicy.csv file as shown below. 
+
+```
+ 
+  p,/*@tempr.email, <tokenserver>, CAPTCHA, deny
+
+  p, /*@/*./*, <tokenserver>, CAPTCHA, enable
+ 
+```
+
+---
+
