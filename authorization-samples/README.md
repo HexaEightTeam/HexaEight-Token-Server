@@ -9,7 +9,7 @@ These sample authorization files belong to the authorization layer at Token Serv
 
 HexaEight Token Servers implements [CASBIN](www.casbin.org) to enforce Authorization at the first layer. The custom access model definition allows Token Server to accept wild card entries to allow accesss for Email Domains to be used during authorization.  
 
-Before you begin this section, you will need to have the below two information 
+Before you begin this section, you will need to have the below information 
 
 Token Server Resource Name (Also referred below as tokenserver> : you can run the following command to get the Token Server Resource Name
   
