@@ -33,10 +33,9 @@ Client ID : You will need to generate a Client ID for your Application using the
 Model.conf and captchamodel does not require modifications and can directly be deployed on the token server.
 
 Policy.csv - Examine the sample entires provided and add entries to suit your environment. 
-The summary of entries required in the policy file are detailed below. The fourth field in the below samples are CONSTANTS and should NOT be changed. 
+The summary of entries required in the policy file are based on four questions. The fourth field in the below samples are CONSTANTS and should NOT be changed. 
 
-
-1. Which EMail Domain needs are allowed to login and fetch Client Tokens from your Token Server.
+### 1. Which EMail Domain needs are allowed to login and fetch Client Tokens from your Token Server.
 
 If you want to allow a specific domain, add an entry only for that domain, or else if you want to allow any domain use a wild card entry.
 
@@ -54,7 +53,7 @@ If you want to allow a specific domain, add an entry only for that domain, or el
   
 ```
   
-2. Which User Agents or Client Application are allowed to request Client Tokens on behalf of the user. In Authorzation terms, this is referreed to as the what part which can access your token server.  Each Client application is allowed based on a Client Hash Generated during application development.  If its a browser based application, the hostname where the application is hosted is the client hash. 
+### 2. Which User Agents or Client Application are allowed to request Client Tokens on behalf of the user. In Authorzation terms, this is referreed to as the what part which can access your token server.  Each Client application is allowed based on a Client Hash Generated during application development.  If its a browser based application, the hostname where the application is hosted is the client hash. 
 
 You can use * in the clienthash if you want to allow any Client, but we advise against doing this esp if you are hosting a browser based application, since anyone may be able to crawl your browser app and rehost at another location and use your token server. We prefer you use a * only during Application Development and switch to valid Client hashes when deploying it in Production.
 
@@ -66,9 +65,26 @@ You can use * in the clienthash if you want to allow any Client, but we advise a
   p, <clienthash>, <tokenserver>, <clientid>, clientaccess
 ```
 
-1. Define the Email users and EMail Domains that are allowed to login, fetch User info and Client Tokens
-2. Define the Client Applications using the Client Hash to enforce specific Client Application to access the Token Server
-3. Define if EMail users are allowed to contact other Email users and define the allowed permissions
-4. Define if EMail users are allowed to access Resource Servers
-5. Define the permissions for Resource Servers to fetch Client Tokens of EMail users to respond back to user requests.
-6. Add Deny rules for any specific users who should not be issued Client Tokens.
+### 3. Which Reesource Servers Or Email users are allowed to fetch Client Tokens of other Resource servers or EMail users. 
+
+To better understand this question, assume you are developing a chat application, here you want every email user to talk to every other email user. Similarly if you have a chatbot resource server, you want every email user to be able to talk to the chatbot, similarly the chatbot also needs to be able to talk back to the email user, so you need to add approprate entries for all the scenario like shown below. 
+
+```
+  p, <resource>, <tokenserver>, <clientid>, login
+  p, <resource>, <emaildomain>, <clientid>, ask
+  p, <resource>, <emaildomain>, <clientid>, poke
+  p, <emaildomain>, <resource>, <clientid>, ask
+  p, <emaildomain>, <resource>, <clientid>, poke
+  
+```
+
+### 4. Are there any specific Email users inside the allowed domain or a specific EMail sub domains that need to be restricted?
+
+There are times, you want to disallow a certain section of users from being able login into the application, this section allows you to define those entities that are barred from fetching Client tokens.
+
+```
+  p,<emailid>, <tokenserver>, <clientid>, deny
+              
+  p,<emaildomain>, <tokenserver>, <clientid>, deny  
+
+```
