@@ -40,6 +40,7 @@ The summary of entries required in the policy file are detailed below. The fourt
 
 If you want to allow a specific domain, add an entry only for that domain, or else if you want to allow any domain use a wild card entry.
 
+```
   p, /*@mydomain.com, <tokenserver>, <clientid>, login  
   p, /*@mydomain.com, <tokenserver>, <clientid>, ask
   p, /*@mydomain.com, <tokenserver>, <clientid>, poke
@@ -51,16 +52,19 @@ If you want to allow a specific domain, add an entry only for that domain, or el
   p, /*@*.*, <tokenserver>, <clientid>, ask
   p, /*@*.*, <tokenserver>, <clientid>, poke
   
+```
+  
 2. Which User Agents or Client Application are allowed to request Client Tokens on behalf of the user. In Authorzation terms, this is referreed to as the what part which can access your token server.  Each Client application is allowed based on a Client Hash Generated during application development.  If its a browser based application, the hostname where the application is hosted is the client hash. 
 
 You can use * in the clienthash if you want to allow any Client, but we advise against doing this esp if you are hosting a browser based application, since anyone may be able to crawl your browser app and rehost at another location and use your token server. We prefer you use a * only during Application Development and switch to valid Client hashes when deploying it in Production.
 
+```
   p, /*, <tokenserver>, <clientid>, clientaccess
   
                     OR
 
   p, <clienthash>, <tokenserver>, <clientid>, clientaccess
-
+```
 
 1. Define the Email users and EMail Domains that are allowed to login, fetch User info and Client Tokens
 2. Define the Client Applications using the Client Hash to enforce specific Client Application to access the Token Server
