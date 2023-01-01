@@ -7,9 +7,9 @@ This Repository contains the links to the Latest Release of HexaEight Tokens. Th
 
 ### HexaEight Token Server is currently available for the following Platforms
 
-#### [Windows (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip)
+#### [Windows (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip) : VerifiedHash : e19bbc208973858ff01fb7451c0df99665cde12383f247abb843f8775450f30df414a1b6f02a798d2eb22b9f42abe17518976e02f53658ad288a92b854ec7e1d
   
-#### [Linux (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip)
+#### [Linux (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) VerifiedHash : b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
 
 #### Mac OSX (64 bit version) - Coming Soon
 
