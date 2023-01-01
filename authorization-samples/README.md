@@ -30,7 +30,7 @@ Model.conf and captchamodel does not require modifications and can directly be d
 Policy.csv - Examine the sample entires provided and add entries to suit your environment. 
 The summary of entries required in the policy file are based on four questions. The fourth field in the below samples are CONSTANTS and should NOT be changed. 
 
-If you plan on running multiple instances of HexaEight Token Server, ensure all the instances point to the same Model and Policy files by using a shared drive across machines.  Alternatively you can create these files to suit your application and upload it to Amazon S3 or CloudFlare R2 Storage using the --pushconfig option.  You can then let all instances of the Token Server to point to the S3 Storage for authorization checks.
+If you plan on running multiple instances of HexaEight Token Server, ensure all the instances point to the same Model and Policy files by using a shared drive across machines.  Alternatively you can create these files to suit your application and upload it to Amazon S3 or CloudFlare R2 Storage using the --saveconfig option.  You can then let all instances of the Token Server to point to the S3 Storage for authorization checks.
 
 ### 1. Which EMail Domain are allowed to login and fetch Client Tokens from your Token Server?
 
