@@ -7,9 +7,9 @@ This Repository contains the links to the Latest Release of HexaEight Tokens. Th
 
 ### HexaEight Token Server is currently available for the following Platforms
 
-#### [Windows (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip) : VerifiedHash : e19bbc208973858ff01fb7451c0df99665cde12383f247abb843f8775450f30df414a1b6f02a798d2eb22b9f42abe17518976e02f53658ad288a92b854ec7e1d
+#### [Windows (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip) 
   
-#### [Linux (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) VerifiedHash : b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
+#### [Linux (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) 
 
 #### Mac OSX (64 bit version) - Coming Soon
 
@@ -179,4 +179,34 @@ If you wish to Enable HTTPs create a file called appsettings.json as shown above
 
 Restart HexaEight Token Server for the change to take effect.
 
+**HexaEight Verified Hash Values**
 
+Windows X64 : b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
+Linux X64 : b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
+OSX X64 :
+Linux ARM : 
+
+The above values can be verified by using the --verifycert option. Ensure that the .hic files are located in the same folder as the executable. The below output was captured on a Linux Machine running Ubuntu X64
+
+```
+$ ./HexaEight_Token_Issuer  --verifycert
+-----------------------------------------------------------
+FileName : HexaEight_Token_Issuer
+VerifiedHash : b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
+HashAlgorithm : SHA512
+Description : HexaEight_Token_Issuer 1.6.801
+Publisher : AUTH.HEXAEIGHT.COM
+Issuer : AUTH.HEXAEIGHT.COM
+Certificate Issued At : 27875831
+Certificate Expiry At : 28135020
+AuthenticData : This File or Sofware [HexaEight_Token_Issuer] has been verified successfully.
+
+The Hash can also be manually verified by combining the following properties below: 
+FILENAME followed By HASHOFTHISFILE followed by DESCRIPTION
+The above SHA512 Hash should match with b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
+
+Note: This message wont be displayed if this File or Software was altered or tampered.
+This is a Software Publisher Certificate Published by AUTH.HEXAEIGHT.COM and Certified by AUTH.HEXAEIGHT.COM
+This message was generated at 1/1/2023 5:11:56 AM
+-----------------------------------------------------------
+```
