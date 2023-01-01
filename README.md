@@ -186,7 +186,7 @@ Restart HexaEight Token Server for the change to take effect.
 Windows X64 : e19bbc208973858ff01fb7451c0df99665cde12383f247abb843f8775450f30df414a1b6f02a798d2eb22b9f42abe17518976e02f53658ad288a92b854ec7e1d
 Linux X64   : b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20
 OSX X64     : 
-Linux ARM   :
+ARM (Pi)    : 586d5d76032368c264c5d0aa830a474a93b983ef0cc1c6101d4552ae3a6bb33c839a1c8f42d9c149952a87e357a28f2f8c637f9de6900b7303c4e986375c5037
 ```
 ---
 The above values can be verified by using the --verifycert option. Ensure that the .hic files are located in the same folder as the executable. The below output was captured on a Linux Machine running Ubuntu X64
