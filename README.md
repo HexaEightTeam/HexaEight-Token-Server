@@ -182,13 +182,13 @@ Restart HexaEight Token Server for the change to take effect.
 **HexaEight Verified Hash Values**
 
 Windows X64 
-###### b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20 ######
+###### b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20 
 Linux X64 : 
-###### b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20 ######
+###### b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20 
 OSX X64 : 
-###### ######
+###### 
 Linux ARM : 
-###### ######
+###### 
 
 The above values can be verified by using the --verifycert option. Ensure that the .hic files are located in the same folder as the executable. The below output was captured on a Linux Machine running Ubuntu X64
 
