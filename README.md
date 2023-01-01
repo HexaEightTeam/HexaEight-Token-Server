@@ -181,7 +181,7 @@ Restart HexaEight Token Server for the change to take effect.
 
 **HexaEight Verified Hash Values**
 
-Windows X64 : ^b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20^
+Windows X64 : <font size="1"> b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20 </font>
 Linux X64 : ^b38c2cb8794f18011e7d989f70f0bdc97f6817ffff50022f66f05c5a0462e4fccffbf17dae62bc1488caaaa6a012bd6401324935c4d2ea7fb6205d9a3e2aca20^
 OSX X64 : ^ ^
 Linux ARM : ^ ^
