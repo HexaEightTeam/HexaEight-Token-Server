@@ -31,7 +31,7 @@ HexaEight_Token_Issuer 1.6.801
 
   -a, --apikey                 Set Rapid API Key
 
- -q, --quickmode              Enable Quick Captcha Application Layer Encryption Mode for AES Encryption/Decryption
+  -q, --quickmode              Enable Quick Captcha Application Layer Encryption Mode for AES Encryption/Decryption
 
   -s, --setresourceowner       Set Resource Owner
 
@@ -46,6 +46,10 @@ HexaEight_Token_Issuer 1.6.801
   -h, --filehash               Show the SHA512 Hash of this file
 
   -v, --verifycert             Use this to Verify the Authencity of this Software
+
+  -p, --saveconfig             Use this option to push the configuration policies to s3 Cloud Storage
+
+  -r, --getconfig              Use this option to retrieve the configuration policies from s3 Cloud Storage
 
   --help                       Display this help screen.
 
