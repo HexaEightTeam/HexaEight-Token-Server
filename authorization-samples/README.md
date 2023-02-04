@@ -89,7 +89,7 @@ If you want to allow only specific users with roles then you can add a enforceme
 ```
 
 
-2. Upon successful login, can an email user communicate with another email user who is also logged into your application. 
+### 2. Upon successful login, can an email user communicate with another email user who is also logged into your application. 
 
 If the answer to the above question is yes, the create a policy entry per line like shown below. Use wildcard(*) to allow specific domains.
 
@@ -110,7 +110,7 @@ If you do not want any email users to communicate with any other email user, do 
 
 ```
 
-3. Upon successful login can any email users communicate with resource servers which are part of the application?
+### 3. Upon successful login can any email users communicate with resource servers which are part of the application?
 
 If the answer to the above question is yes, the create a policy entry per line like shown below. Use wildcard(*) to for multiple resource servers belonging to same domain.
 
@@ -129,7 +129,7 @@ If the answer to the above question is yes, the create a policy entry per line l
 ```
 
 
-4. Which Resource Servers are allowed to login and can they communicate with email users or other resource servers inside the application?
+### 4. Which Resource Servers are allowed to login and can they communicate with email users or other resource servers inside the application?
 
 Unlike the previous three questions, this section pertains to Resource Servers.
 
