@@ -3,11 +3,16 @@
 
 This section contains the authorization files for HexaEight Token Server
 
+#### [Download Sample Policy Zip](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/policysamples.zip) 
+
+
+
+
 HexaEight Server implements two authorzation layers, the first one at the Token Server Level and the second one at the Resource Layer.
 
-These sample authorization files belong to the authorization layer at Token Server Level and should not be confused with th authorization required for Resources
+These sample authorization files belong to the authorization layer at Token Server Level and should not be confused with the authorization required for Resources
 
-HexaEight Token Servers implements [CASBIN](www.casbin.org) to enforce Authorization at the first layer. The custom access model definition allows Token Server to accept wild card entries to allow accesss for Email Domains to be used during authorization.  
+HexaEight Token Servers implements [CASBIN](www.casbin.org) to enforce Authorization at the first layer (at the Token Server). This custom access model definition allows the Token Server to accept wild card entries for Email Domains to be used during authorization.  
 
 Before you begin this section, you will need to have the below information 
 
@@ -21,90 +26,137 @@ Client ID : You will need to generate a Client ID for your Application using the
 
 ---
 
-  Model.conf - Contains the Custom Access Model Definition for Enforcers. 
+Policy File Definitions:
 
-  Policy.csv - Sample authorization definitions that enforce who is allowed to login and fetch Client tokens
-  
-Model.conf and captchamodel does not require modifications and can directly be deployed on the token server.
+	1.	Model.conf - Contains the Custom Access Model Definition for Enforcers. 
+	2.	userpolicy.csv	- Contains Policy Enforement related to Users (Classified as anyonee possessing an email address and able to login using HexaEight Autheticator Mobile App)
+	3.	resourcepolicy.csv - Contains Policy Enforcement related to Resource Servers (Servers are classified to not have an email address but possess a domain or generic name) 
+	4.	clientappspolicy.csv - Contains Policy Enforcement about the user agent domains and apps that can use the token server to login to the application.
+	5.	clientscopespolicy.csv - Contains Policy Enforcement about the users/servers and the roles
 
-Policy.csv - Examine the sample entires provided and add entries to suit your environment. 
-The summary of entries required in the policy file are based on four questions. The fourth field in the below samples are CONSTANTS and should NOT be changed. 
 
-If you plan on running multiple instances of HexaEight Token Server, ensure all the instances point to the same Model and Policy files by using a shared drive across machines.  Alternatively you can create these files to suit your application and upload it to Amazon S3 or CloudFlare R2 Storage using the --saveconfig option.  You can then let all instances of the Token Server to point to the S3 Storage for authorization checks.
+Quick Start:
 
-### 1. Which EMail Domain are allowed to login and fetch Client Tokens from your Token Server?
 
-If you want to allow a specific domain, add an entry only for that domain, or else if you want to allow any domain use a wild card entry.
+The policy entry required in each of the above mentioned policy file are based on the below four questions. 
 
-```
-  p, /*@mydomain.com, <tokenserver>, <clientid>, login  
-  p, /*@mydomain.com, <tokenserver>, <clientid>, ask
-  p, /*@mydomain.com, <tokenserver>, <clientid>, poke
+Note : The fourth field in the sample policy files are CONSTANTS and should NOT be changed. 
 
-            
-                    OR
-      
-  p, /*@*.*, <tokenserver>, <clientid>, login
-  p, /*@*.*, <tokenserver>, <clientid>, ask
-  p, /*@*.*, <tokenserver>, <clientid>, poke
-  
-```
-  
-### 2. Which User Agents or Client Application are allowed to request Client Tokens on behalf of the user? 
 
-In Authorzation terms, this is referred to as the what part which can access your token server.  Each Client application is allowed based on a Client Hash which can be generated after application development.  If its a browser based application, the hostname where the application is hosted is the client hash. 
+### 1. Who are the email users allowed to Login To Your Application Through the Token Server?
 
-You can use * in the clienthash if you want to allow any Client, but we advise against doing this esp if you are hosting a browser based application, since anyone may be able to crawl your browser app and rehost at another location and use your token server. We prefer you use a * only during Application Development and switch to valid Client hashes when deploying it in Production.
+Create a policy entry per line if allowing only specific domains or use Wildcard(*) to allow all users from a domain like shown below
+
+**Policy File Name : userpolicy.csv**
 
 ```
-  p, /*, <tokenserver>, <clientid>, clientaccess
-  
-                    OR
+# Allow all email users to login to Application
+# p, /*@*.*, mytoken.server, CLIENTID, login
+# p, /*@*.*, mytoken.server, CLIENTID, ask
+# p, /*@*.*, mytoken.server, CLIENTID, poke
 
-  p, <clienthash>, <tokenserver>, <clientid>, clientaccess
-```
-
-### 3. Which Reesource Servers Or Email users are allowed to fetch Client Tokens of other Resource servers or EMail users? 
-
-To better understand this question, assume you are developing a chat application, here you want every email user to talk to every other email user. Similarly if you have a chatbot resource server, you want every email user to be able to talk to the chatbot, similarly the chatbot also needs to be able to talk back to the email user, so you need to add approprate entries for all the scenario like shown below. 
-
-```
-  p, <resource>, <tokenserver>, <clientid>, login
-  p, <resource>, <emaildomain>, <clientid>, ask
-  p, <resource>, <emaildomain>, <clientid>, poke
-  p, <emaildomain>, <resource>, <clientid>, ask
-  p, <emaildomain>, <resource>, <clientid>, poke
-  
-```
-
-### 4. Are there any specific Email users inside the allowed domain or a specific EMail sub domains that need to be restricted?
-
-There are times, you want to disallow a certain section of users from being able login into the application, this section allows you to define those entities that are barred from fetching Client tokens.
+# Allow any user who has an email address from domain.dom to login to Application
+# p, /*@*.domain.dom, mytoken.server, CLIENTID, login
+# p, /*@*.domain.dom, mytoken.server, CLIENTID, ask
+# p, /*@*.domain.dom, mytoken.server, CLIENTID, poke
 
 ```
-  p,<emailid>, <tokenserver>, <clientid>, deny
-              
-  p,<emaildomain>, <tokenserver>, <clientid>, deny  
+During Login process, the user is expected to solve a Captcha. The below policy entry defines, the list of email users who can request a captcha from the Token Server to login to the application.
+
+**Policy File Name : captchapolicy.csv**
+
+```
+# Allow all email users to fetch a captcha
+# p, /*@/*./*, mytoken.server, CAPTCHA, enable
+
+# Add a deny rule if you want to disallow specific email users or domains from logging in, you can skip this entry if you dont have such a requirement.
+# p,/*@baddomain.dom, mytoken.server, CAPTCHA, deny
 
 ```
 
----
+Also at the time of login, users are prompted with a list of SCOPES, these SCOPES directly map to roles that a user should belong inside the application. 
 
-  captchamodel.conf - Contains the Custom Access Model Definition for Enforcers used only for fetching Encrypted Captcha
+If you want to allow only specific users with roles then you can add a enforcement either at user or at a domain level to allow users to choose specific roles while logging into the application.
 
-  captchapolicy.csv - Sample authorization definitions that enforce who is allowed to fetch Encrypted Captcha
+**Policy File Name : clientscopespolicy.csv**
+```
+# Allow all users to login using a role called DEFAULT.
+# p, /*@*.*, /*, CLIENTID, DEFAULT
 
-Similar to the model.conf and policy.conf there is a captchamodel.conf and captchapolicy.csv file which contains the enforcement definitions on which set of users are allowed to fetch encrypted captcha to login to the application. 
-
-**Note : Resource Serves DO NOT Use Captcha to login to the application, so only email domain ALLOW AND DENY entires are required in the captchapolicy.csv file as shown below. 
+# Allow any mail user whose mail ends with _admin to login using the ADMIN role
+# p, /*_admin@myemail.dom, /*, CLIENTID, ADMIN
 
 ```
- 
-  p,/*@tempr.email, <tokenserver>, CAPTCHA, deny
 
-  p, /*@/*./*, <tokenserver>, CAPTCHA, enable
- 
+
+2. Upon successful login, can an email user communicate with another email user who is also logged into your application. 
+
+If the answer to the above question is yes, the create a policy entry per line like shown below. Use wildcard(*) to allow specific domains.
+
+If you do not want any email users to communicate with any other email user, do not define any policy entries.
+
+```
+# Allow any email user who has logged into to Application to communicate with any other email user
+# p, /*@/*./*, /*@/*./*, CLIENTID, ask
+# p, /*@/*./*, /*@/*./*, CLIENTID, poke
+
+
+# Below example shows that logged in users can only communicate with a email user who is part of support
+# p, support@mydomain.com, /*@/*./*, CLIENTID, ask
+# p, support@mydomain.com, /*@/*./*, CLIENTID, poke
+# p, /*@/*./*, support@mydomain.com, CLIENTID, ask
+# p, /*@/*./*, support@mydomain.com, CLIENTID, poke
+
+
 ```
 
----
+3. Upon successful login can any email users communicate with resource servers which are part of the application?
 
+If the answer to the above question is yes, the create a policy entry per line like shown below. Use wildcard(*) to for multiple resource servers belonging to same domain.
+
+**Policy File Name : userpolicy.csv**
+
+```
+# Allow any email server to establish direct communication with multiple resource servers.
+# p, /*@/*./*, myresource.server, CLIENTID, ask
+# p, /*@/*./*, myresource.server, CLIENTID, poke
+# p, /*@/*./*, myresource2.server, CLIENTID, ask
+# p, /*@/*./*, myresource2.server, CLIENTID, poke
+
+# Allow any email server to establish direct communication with all resource servers part of the Application
+# p, /*@/*./*, /*, CLIENTID, ask
+# p, /*@/*./*, /*, CLIENTID, poke
+```
+
+
+4. Which Resource Servers are allowed to login and can they communicate with email users or other resource servers inside the application?
+
+Unlike the previous three questions, this section pertains to Resource Servers.
+
+**Policy File Name : resourcepolicy.csv**
+
+```
+# Allow myresorce.server to login to my token server
+# p, myresource.server, mytoken.server, CLIENTID, login
+
+
+# Allow myresorce.server to communicate with any other email user inside th application.
+# p, myresource.server, /*@/*./*, CLIENTID, ask
+# p, myresource.server, /*@/*./*, CLIENTID, poke
+
+# Allow myresorce.server to communicate with another resource server called customresource.server and vice versa from within the application.
+# p, myresource.server, customresource.server, CLIENTID, ask
+# p, myresource.server, customresource.server, CLIENTID, poke
+
+# p, customresource.server, myresource.server, CLIENTID, ask
+# p, customresource.server, myresource.server, CLIENTID, poke
+
+```
+
+**Note : Resource Serves DO NOT Use Captcha to login to the application, so there is no entry requeird in captchapolicy.csv file.
+
+There are no changes required to model.conf and captchamodel.conf files.
+
+Once configuration entries are created, copy these files into the same directory where HexaEight Token Server is installed.
+
+Start the Token Server.
