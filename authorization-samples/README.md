@@ -153,7 +153,7 @@ Unlike the previous three questions, this section pertains to Resource Servers.
 
 ```
 
-**Note : Resource Serves DO NOT Use Captcha to login to the application, so there is no entry requeird in captchapolicy.csv file.
+**Note : Resource Serves DO NOT Use Captcha to login to the application, so there is no entry requeird in captchapolicy.csv file.**
 
 There are no changes required to model.conf and captchamodel.conf files.
 
