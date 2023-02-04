@@ -1,0 +1,20 @@
+# User Policy Configuration
+# Note: Any Email account is treated as a user.
+# This policy defines who is allowed to login (login), request asymmetric shared key (ask) and get information about others (poke)
+
+# The below policy allows any email to login and fetch an asymmetric shared key as well as fetch information about the token server.
+# p, /*@*.*, mytoken.server, CLIENTID, login
+# p, /*@*.*, mytoken.server, CLIENTID, ask
+# p, /*@*.*, mytoken.server, CLIENTID, poke
+
+# The below policy allows any email address request an asymmetric shared key for any other email address as well as fetch information about another email id in this realm (Client ID)
+# p, /*@/*./*, /*@/*./*, CLIENTID, ask
+# p, /*@/*./*, /*@/*./*, CLIENTID, poke
+
+# The below policy allows any email address to fetch an asymmetric shared key and gather infromation from a resource server in this realm (Client ID)
+# p, /*@/*./*, myresource.server, CLIENTID, ask
+# p, /*@/*./*, myresource.server, CLIENTID, poke
+
+# The below policy has a explict deny to block acceess to specific email user or email domains for this realm (Client ID)
+# p,hack@jack.email, mytoken.server, CLIENTID, deny
+# p,/*@tempr.email, mytoken.server, CLIENTID, deny

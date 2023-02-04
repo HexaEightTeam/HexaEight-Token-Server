@@ -1,0 +1,9 @@
+# Client Apps Policy File
+
+# This policy file defines which user agent or client app is allowed to request keys from the token server for a particular client ID
+# This enforcement is already done by HexaEight Platform during user authentication.
+# However this additional policy enforcement at the token server is provided as a second level of enforcement for additional protection.
+# During App Development, it is best to not set this enforcement and enable this enforcement in UAT and Production environments.
+
+# p, /*, mytoken.server, CLIENTID, clientaccess
+
