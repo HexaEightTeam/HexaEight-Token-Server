@@ -7,10 +7,12 @@ Quick Start:
 1. Create a user, login as the user, set umask 022 and run the below command 
 
 ```
+curl "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-mac-OSX.zip" -O -J -L
+
 ```
 
 2. Determine the Resource name for the Token Server and create a Resource Identity Token using your Email Address from HexaEight Mobile App
-3. Get an API Key if you dont have one
+3. Get an [API Key](https://rapidapi.com/hexaeight-hexaeight-default/api/hexaeight-sso-platform/pricing) if you dont have one
 4. Run generatemachinecode.sh script and assign the Resource name to the Token Server along with the API Key by scanning the QR Code using HexaEight Mobile App
 5. Create a Client Application using the command shown below
 
