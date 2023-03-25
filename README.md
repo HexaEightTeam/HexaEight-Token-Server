@@ -1,10 +1,8 @@
 # HexaEight-Token-Server
 
-HexaEight Token Server issues Client Tokens which are Application specific Asymmetric shared keys to users and resource servers which is used by HexaEight Sessions to encrypt or decrypt information.
+HexaEight Token Server is an Authorization Server and issues Client Tokens to HexaEight Sessions running On the Client Side as well as HexaEight Sessions runnning inside Resource Servers a.k.a Middleware.  The tokens are used by both the source and destination for encryption and decrypton purposes.
 
-HexaEight Token Server can run over HTTP since the Client tokens a.k.a Asymmetric Shared keys are not vulnerable to attacks.  However Token Sever can also be started over HTTPs for added security. 
-
-For more information Visit [HexaEight](www.hexaeight.com)
+HexaEight Token Server can run over HTTP since the Client tokens a.k.a Asymmetric Shared keys are not vulnerable to attacks.  But if you want to enhance the security of the Token Server, you can configure the Server run in HTTP(s) mode. 
 
 This Repository contains the links to HexaEight Token Server Executables. The Zip Files also contain HIC files required verify the authenticity of the Executables.
 
@@ -18,11 +16,5 @@ This Repository contains the links to HexaEight Token Server Executables. The Zi
 
 #### [Raspberry Pi (ARM)](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/arm)
 
-
-
-
-You can use https://e-verify.hexaeight.com/ to verify the authenticy of HexaEight_Token_Issuer executable.  The Zip file contains a .hic file which is required to verify the authenticity of the executable.
-
-
-**NOTE: DO NOT change the name or rename HexaEight Executables since they protected by HIC, the executable wont run if the name of the executable is changed.**
+For more information Visit [HexaEight](www.hexaeight.com)
 
