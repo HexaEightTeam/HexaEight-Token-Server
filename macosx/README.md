@@ -1,4 +1,4 @@
-# MacOSX 
+# macOSX 
 
 Quick Start:
 
