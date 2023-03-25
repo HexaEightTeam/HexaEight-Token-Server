@@ -10,13 +10,13 @@ This Repository contains the links to HexaEight Token Server Executables. The Zi
 
 ### HexaEight Token Server is currently available for the following Platforms.  The links below contain Platform specific instructions.
 
-#### [Windows (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/windows)
+#### [Windows (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/windows)
 
-#### [Linux (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/linux) 
+#### [Linux (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/linux) 
 
-#### [Mac OSX (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/macosx) 
+#### [Mac OSX (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/macosx) 
 
-#### [Raspberry Pi (ARM)](https://github.com/HexaEightTeam/HexaEight-Token-Server/arm)
+#### [Raspberry Pi (ARM)](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/arm)
 
 
 
