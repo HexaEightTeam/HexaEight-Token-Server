@@ -33,6 +33,8 @@ sudo launchctl load /Library/LaunchDaemons/com.hexaeight.startup.plist
 
 **Ensure to lauch the Token Server as the user and not as ROOT**
 
+**The restarttokenserver.sh can be used to restart the Token Server if the Authorization policies are updated**
+**The cleanup.sh should also be scheduled to run the cleanup routine that can detect anomalies in the downloaded Tokens and remove them automatically.**
 
 Sample Output of HexaEight Token Server On Mac Mini M1
 
