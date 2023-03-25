@@ -1,6 +1,6 @@
 # macOSX 
 
-## Download Link : [Mac OSX (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-linux-x64.zip) 
+## Download Link : [Mac OSX (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-mac-OSX.zip) 
 
 Quick Start:
 
