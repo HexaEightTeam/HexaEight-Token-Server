@@ -4,10 +4,13 @@
 
 Quick Start:
 
-1. Create a user, login as the user, set umask 022 and run the below command 
+1. Create a user, login as the user, set the umask  and run the below commands
 
 ```
+umask 077
 curl "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-mac-OSX.zip" -O -J -L
+unzip ./HexaEight_Token_Issuer-mac-OSX.zip
+chmod 700 tokenserver/HexaEight_Token_Issuer
 
 ```
 
@@ -21,18 +24,17 @@ $HOME/tokenserver/HexaEight_Token_Issuer --clientid
 ```
 6. Enable authorization for the Client Application using the sample Authorization files
 7. Start the Server using start_tokenserver.sh script and verify tokenserver.log and tokenserver.err for errors
-8. Change permissions for all the files to 
-
-Ensure to lauch the Token Server as the user and not as ROOT
-
-
-A Sample Startup file (not tested) is available for reference to start HexaEight Token Server on Bootup using 
+8. Create a plist file and use launchctl to starts token server post boot phase. A sample File (untested) for startup is provided for reference.
 
 ```
 sudo launchctl load /Library/LaunchDaemons/com.hexaeight.startup.plist
 ```
 
-Sample Output of HexaEight Token Server Running On Mac Mini M1
+
+**Ensure to lauch the Token Server as the user and not as ROOT**
+
+
+Sample Output of HexaEight Token Server On Mac Mini M1
 
 ```
 m1@e16ce1a5-b08b-4614-9681-5eb6d14e8474 tokenserver % uname -a
