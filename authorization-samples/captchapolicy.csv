@@ -1,9 +1,0 @@
-# Captcha Sample Policy File
-
-# Example of Denying access to specific email address
-# p,/*@tempr.email, mytoken.server, CAPTCHA, deny
-
-
-# Allow Any Email Address to request for a Captcha
-# Denying a captcha for a user might result in the user not being able to complete the login process.
-# p, /*@/*./*, mytoken.server, CAPTCHA, enable
