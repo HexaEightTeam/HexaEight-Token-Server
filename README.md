@@ -14,7 +14,7 @@ This Repository contains the links to HexaEight Token Server Executables. The Zi
 
 #### [Linux (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/linux) 
 
-#### [Mac OSX (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/macOSX) 
+#### [Mac OSX (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/macosx) 
 
 #### [Raspberry Pi (ARM)](https://github.com/HexaEightTeam/HexaEight-Token-Server/arm)
 
