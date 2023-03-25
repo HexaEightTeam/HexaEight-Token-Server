@@ -1,5 +1,7 @@
 # macOSX 
 
+## Download Link : [Mac OSX (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-linux-x64.zip) 
+
 Quick Start:
 
 1. Create a user, login as the user, set umask 022 and run the below command 
