@@ -6,6 +6,42 @@ This section contains the authorization files for HexaEight Token Server
 #### [Download Sample Policy Zip](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/policysamples.zip) 
 
 
+The are totally six authorization sample files as part of the Zip package.
+
+1. model.conf - This is the default file contains the Model Definition for Enforcement across the rest of the Policy files except Captcha.
+2. captchamodel.conf - This file contains the Captcha Model Definition for Enforcement 
+3. userpolicy.csv - This Policy file enforces the User Authorization.
+4. resourcepolicy.csv - This Policy file enforces the User Authorization.
+5. clientappspolicy.csv - This Policy file enforces the authorized Client Applications
+6. clientscopespolicy.csv - This Policy file enforces the authorized scope(s) / roles using which the Client Application is allowed to login.
+
+
+Before you begin modifying these files, you need to prepare some ground work on the authorization policies required for your envionment. 
+
+**HexaEight Token Server supports Split Authorization, which means you can have multiple instances of Token Servers handling different sections of authorizations**
+
+For Example in the below picture, token server auth.mydomain.com has 3 instances running all of them syncryonized using a Time code. 
+
+```mermaid
+erDiagram
+	Client-Apps }|..|{ HexaEight-Token-Server1 : connects
+       HexaEight-Token-Server1 {
+        Instance1 auth-mydomain-com
+        Enforces User-Policy-Only
+	}
+    Resrource-Server }|..|{ HexaEight-Token-Server2 : connects
+       HexaEight-Token-Server2 {
+        Instance2 auth-mydomain-com
+        Enforces Resource-Only-Policy
+	}
+       Resrource-Server {
+        Uses HexaEight-Middleware
+        To Authorize-Client-App-Request
+	}
+    Unix-Host }|..|{ HexaEight-Token-Server2 : authenticate-system-login
+    Client-Apps }|..|{ Resrource-Server : access-apis
+```
+
 
 
 HexaEight Server implements two authorzation layers, the first one at the Token Server Level and the second one at the Resource Layer.
