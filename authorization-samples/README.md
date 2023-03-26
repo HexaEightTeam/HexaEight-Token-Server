@@ -97,7 +97,7 @@ HexaEight_Token_Issuer.exe --saveconfig
 ---
 
 ### Questions/Bugs
-** Use the Issues section, to ask any questions related to authorization policy file any bugs you have encountered during policy enforcement **
+**Use the Issues section, to ask any questions related to authorization policy file any bugs you have encountered during policy enforcement**
 
 ### Policy Refernce
 The contents of each file with additional information is shown below for quick reference
