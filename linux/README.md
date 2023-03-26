@@ -34,8 +34,27 @@ su - hexa8server -c '$HOME/tokenserver/cleanup.sh &'
 
 ```
 
-
 **Ensure to lauch the Token Server as the user and not as ROOT**
 
 **The restarttokenserver.sh can be used to restart the Token Server if the Authorization policies are updated**
+
+**HexaEight Token Server by defaults runs on http port 5000 only, if you need to configure it to run on a different port and use https you will need to create appsettings.json file with the below contents after modifying the configuration accodring to your setup**
+
+```{                                                                               
+  "Kestrel": {                                
+    "Endpoints": {                                                              
+      "Http": {                                
+        "Url": "http://0.0.0.0:8080"                                            
+      },                                                                        
+        "HttpsInlineCertFile": {                                                
+        "Url": "https://0.0.0.0:8443",                           
+        "Certificate": {                                         
+          "Path": "certificate.pfx",             
+          "Password": "CertificatePassword"               
+        }                                          
+      },                                       
+    }                                                      
+  }                                          
+} 
+```
 
