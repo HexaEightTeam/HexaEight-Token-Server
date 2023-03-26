@@ -5,7 +5,7 @@ This section contains the authorization files for HexaEight Token Server
 
 #### [Download Sample Policy Zip](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/policysamples.zip) 
 
-**HexaEight Token Server uses [CASBIN](https://www.casbin.net) to enforce authorization. The files are plain text files with the authorization polcies. Hence care should be taken to change the ownership of these files such that no one else except the token server user is allowed to access these files. We will be adding a feature to encrypt these files in our subsequent releses for enhanced protection**
+**HexaEight Token Server uses [CASBIN](https://casbin.org/) to enforce authorization. The files are plain text files with the authorization polcies. Hence care should be taken to change the ownership of these files such that no one else except the token server user is allowed to access these files. We will be adding a feature to encrypt these files in our subsequent releses for enhanced protection**
 
 The are totally seven authorization sample files as part of the Zip package.
 
