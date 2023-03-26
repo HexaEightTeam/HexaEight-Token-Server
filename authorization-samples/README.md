@@ -45,7 +45,11 @@ erDiagram
     Client-Apps }|..|{ Resrource-Server : access-apis
 ```
 
-If you have the answers to the below authorization questions, you will be in a postion to modify the authorization policy files as per your environment.
+---
+
+### Authorization Policy Groundwork
+
+If you have the answers to the below authorization questions, you will be in a postion to modify the authorization policy files using a simple text editor to suit your requirement.
 
 The model.conf and captchamodel.conf is a global configuration do NOT require any changes.
 
@@ -58,26 +62,47 @@ Associated Resource Server Policy File Names : resourcepolicy.csv, clientscopesp
 ### 3. What are the list of hosts where HexaEight system authentication will be enabled ? 
 Associated Resource Server Policy File Names : resourcepolicy.csv, captchapolicy.csv
 
+---
 
 RBAC: If you wish to implement Role based authorization for your logged in user, clientscopespolicy.csv can be used to define the different roles that the user can use to login to the application. Once the Client application is authenticated, any request to the Resource server will carry the role information that is used to login to the request.
 
 The role can also be substituted as a set of Scopes that can be mapped by the Resource server before granting access to the resource.
 
+---
+
 The clientappspolicy.csv contains a list of authorized Client Applications by using their SHA512 hash. If you are adding a client application hosted on myapp.mydomain.com and your url is http://myapp.mydomain.com:8080/index.html, then you can [use this site to calculate your hash](https://passwordsgenerator.net/sha512-hash-generator/). For this example you will need to use myapp.mydomain.com:8080 to compute the Cient Application hash which in this case is 5CB6AB6D1DC04DA24255C828D0310A2102F03A35F48CD2B7DA96C3A83632A55A220B7B8698E3D318B6B5929BD4165EDF8E0D53CF543B5E522305BF0BEFF2081F.
 
 When using Client SHA512 hashes ensure its entered in capitals, since we have found that lowercase has given some mild enforcement issues.
 
+---
 
-(Currently System-Authentiation-Plugin works for Linux and Raspberry pi using PAM authentication, Windows and MacOs System Plugin will be available soon)
+### Additional Information
 
-If you are using Split Authorization, you need to make sure all instances of HexaEight Token Server are using the same copy of  clientscopepolicy.csv and clientappspolicy.csv since this policy file is required for both Client Application authorization as well as Resource authorization.
+	Currently System-Authentiation-Plugin works for Linux and Raspberry pi using PAM authentication, Windows and MacOs System Plugin will be available soon)
 
-Edit the Policy files using any text editor and save these files into the same tokenserver directory where HexaEight Token Server is installed.
+	If you are using Split Authorization, you need to make sure all instances of HexaEight Token Server are using the same copy of  clientscopepolicy.csv and clientappspolicy.csv since this policy file is required for both Client Application authorization as well as Resource authorization.
 
-Start the Token Server to apply the confiruation.
+	Edit the Policy files using any text editor and save these files into the same tokenserver directory where HexaEight Token Server is installed.
 
+	Token Server has the capability to save the configuration files and point to a S3 Storage.  Use the flags --saveconfig and --getconfig to save and retrieve the configuration files from S3 Storage. Below is a sample output
+	
+```
+HexaEight_Token_Issuer.exe --saveconfig
+- Model Configuration Saved Successfully.
+- User Policy Configuration Saved Successfully.
+- Resource Policy Configuration Saved Successfully.
+- Client App Policy Configuration Saved Successfully.
+- Client Scopes Policy Configuration Saved Successfully.
+- Captcha Model Configuration Saved Successfully.
+- Captcha Policy Configuration Saved Successfully.
+- Client ID Configuration Saved Successfully.
+```
+--
+
+### Questions/Bugs
 ** Use the Issues section, to ask any questions related to authorization policy file any bugs you have encountered during policy enforcement **
 
+### Policy Refernce
 The contents of each file with additional information is shown below for quick reference
 
 ---
