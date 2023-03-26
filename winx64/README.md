@@ -29,7 +29,7 @@ cd tokenserver
 .\HexaEight_Token_Issuer.exe --clientid
 ```
 
-6. Download sample Authorization files and modify the authorization Policies to your Client Application. The PS command to download the policy files is shown below
+6. Download [sample Authorization files](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/authorization-samples) and modify the authorization Policies to your Client Application. The PS command to download the policy files is shown below
 ```
 Invoke-WebRequest "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/policysamples.zip" -UseBasicParsing -Outfile policysamples.zip
 Expand-Archive .\policysamples.zip -DestinationPath .
