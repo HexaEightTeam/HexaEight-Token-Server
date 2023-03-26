@@ -78,12 +78,11 @@ When using Client SHA512 hashes ensure its entered in capitals, since we have fo
 
 ### Additional Information
 
-
 1. Currently System-Authentiation-Plugin works for Linux and Raspberry pi using PAM authentication, Windows and MacOs System Plugin will be available soon)
-2. If you are using Split Authorization, you need to make sure all instances of HexaEight Token Server are using the same copy of  clientscopepolicy.csv and clientappspolicy.csv since this policy file is required for both Client Application authorization as well as Resource authorization.
-3.Edit the Policy files using any text editor and save these files into the same tokenserver directory where HexaEight Token Server is installed
-4.Token Server has the capability to save the configuration files and point to a S3 Storage.  Use the flags --saveconfig and --getconfig to save and retrieve the configuration files from S3 Storage. Below is a sample output.
-	
+2. If you are using Split Authorization, you need to make sure all instances of HexaEight Token Server are using the same copy of  clientscopepolicy.csv and clientappspolicy.csv since this policy file is required for both Client Application authorization as well as Resource authorization
+3. Edit the Policy files using any text editor and save these files into the same tokenserver directory where HexaEight Token Server is installed
+4. Token Server has the capability to save the configuration files and point to a S3 Storage.  Use the flags --saveconfig and --getconfig to save and retrieve the configuration files from S3 Storage. Below is a sample output
+
 ```
 HexaEight_Token_Issuer.exe --saveconfig
 - Model Configuration Saved Successfully.
