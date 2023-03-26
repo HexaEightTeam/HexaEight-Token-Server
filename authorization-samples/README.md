@@ -167,7 +167,6 @@ The contents of each file with additional information is shown below for quick r
 # p,someone@gmail.com, confidential.resource.com, CLIENTID-B, deny
 
 ```
----
 
 ---
 ## ResourcePolicy.csv
@@ -215,8 +214,6 @@ The contents of each file with additional information is shown below for quick r
 
 ```
 ---
-
----
 ## CaptchaPolicy.csv
 ```
 # Captcha Sample Policy File
@@ -243,8 +240,6 @@ The contents of each file with additional information is shown below for quick r
 
 ```
 ---
-
----
 ## ClientAppsPolicy.csv
 ```
 # Client Apps Policy File
@@ -265,7 +260,6 @@ The contents of each file with additional information is shown below for quick r
 # p, mobileapp.sha512hash, mytoken.server, CLIENTID, clientaccess
 # p, scriptapp.sha512hash, mytoken.server, CLIENTID, clientaccess
 ```
----
 
 ---
 ## ClientScopesPolicy.csv
