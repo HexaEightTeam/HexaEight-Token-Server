@@ -22,7 +22,7 @@ chmod 700 tokenserver/HexaEight_Token_Issuer
 ```
 $HOME/tokenserver/HexaEight_Token_Issuer --clientid
 ```
-6. Enable authorization for the Client Application using the sample Authorization files
+6. Enable authorization for the Client Application using the [sample Authorization files](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/authorization-samples)
 7. Start the Server using start_tokenserver.sh script and verify tokenserver.log and tokenserver.err for errors
 8. Add entries to /etc/rc.local to open up firewall ports as well as start the Token Server under user account as well as run the cache clean up periodically
 
