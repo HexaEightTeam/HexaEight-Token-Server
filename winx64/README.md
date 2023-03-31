@@ -44,7 +44,7 @@ nssm set <ServiceName> ObjectName ".\<current Username>" "<your Password>"
 nssm set <ServiceName> AppDirectory "C:\Users\<username>\tokenserver"
 nssm set <ServiceName> Start SERVICE_DELAYED_AUTO_START
 ```
-**Note: The starttokenserver.bat uses %HOMEDIR% to point to the Token Server, Modify the startup batch script to point to the token server**
+**Note: The starttokenserver.bat uses %HOMEDIR% to point to the Token Server, Modify the startup batch script to point to the token server location**
 
 ---
 
