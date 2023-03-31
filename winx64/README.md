@@ -45,6 +45,7 @@ nssm set <ServiceName> AppDirectory "C:\Users\<username>\tokenserver"
 nssm set <ServiceName> Start SERVICE_DELAYED_AUTO_START
 ```
 **Note: The starttokenserver.bat uses %HOMEDIR% to point to the Token Server, Modify the startup batch script to point to the token server**
+
 ---
 
 **HexaEight Token Server by defaults runs on http port 5000 only, if you need to configure it to run on a different port and use https you will need to create appsettings.json file with the below contents after modifying the configuration accodring to your setup**
