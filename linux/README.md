@@ -11,6 +11,7 @@ umask 077
 curl "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip" -O -J -L
 unzip ./HexaEight_Token_Issuer-linux-x64.zip
 chmod 700 tokenserver/HexaEight_Token_Issuer
+chmod 700 tokenserver/*.sh
 
 ```
 
