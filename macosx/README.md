@@ -14,7 +14,7 @@ chmod 700 tokenserver/HexaEight_Token_Issuer
 
 ```
 
-2. Determine the Resource name for the Token Server and create a Resource Identity Token using your Email Address from HexaEight Mobile App
+2. Determine the Resource name for the Token Server and create a Resource Identity Token using your Email Address from HexaEight Mobile App. Ideally a domain resource name like auth.yourdomain.com would be ideal since this is the name that shows up during user authentication.  To associate your domain name with the token server, you first need to use HexaEight Official Mobile app and use your email id to create a Domain Resource Token. Follow the instructions since you need to add a TXT record in your domain DNS. Once the TXT record is added you can use the Domain Resource Identity token to scan the QR Code which will be displayed when using the generatemachinecode option described in Step 4
 3. Get an [API Key](https://rapidapi.com/hexaeight-hexaeight-default/api/hexaeight-sso-platform/pricing) if you dont have one
 4. Run generatemachinecode.sh script and assign the Resource name to the Token Server along with the API Key by scanning the QR Code using HexaEight Mobile App
 5. Create a Client Application using the command shown below
