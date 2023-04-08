@@ -18,5 +18,4 @@ This Repository contains the links to HexaEight Token Server Executables. The Zi
 
 #### [Raspberry Pi (ARM)](https://github.com/HexaEightTeam/HexaEight-Token-Server/tree/main/arm)
 
-For more information Visit [HexaEight](www.hexaeight.com)
 
