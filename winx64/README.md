@@ -70,3 +70,27 @@ nssm set <ServiceName> Start SERVICE_DELAYED_AUTO_START
 ```
 
 Start the Token Server Service and you should be ready to create your first Application by pointing to the Token Server
+
+
+### Verification Details
+```
+-----------------------------------------------------------
+FileName : HexaEight_Token_Issuer.exe
+VerifiedHash : b1acd6fa501fe22b52387d9d6b336146c852b11054e9966cade4324050e5cd0699294a1f15439656e2fb2ba03ab6b4da2bb9eed9b590a4b4c47c2f5e2ca96e4a
+HashAlgorithm : SHA512
+Description : HexaEight_Token_Issuer 1.6.801
+Publisher : AUTH.HEXAEIGHT.COM
+Issuer : AUTH.HEXAEIGHT.COM
+Certificate Issued At : 28672100
+Certificate Expiry At : 28931295
+AuthenticData : This File or Sofware [HexaEight_Token_Issuer.exe] has been verified successfully.
+
+The Hash can also be manually verified by combining the following properties below:
+FILENAME followed By HASHOFTHISFILE followed by DESCRIPTION
+The above SHA512 Hash should match with b1acd6fa501fe22b52387d9d6b336146c852b11054e9966cade4324050e5cd0699294a1f15439656e2fb2ba03ab6b4da2bb9eed9b590a4b4c47c2f5e2ca96e4a
+
+Note: This message wont be displayed if this File or Software was altered or tampered.
+This is a Software Publisher Certificate Published by AUTH.HEXAEIGHT.COM and Certified by AUTH.HEXAEIGHT.COM
+This message was generated at 07/07/2024 10:31:17
+-----------------------------------------------------------
+```
