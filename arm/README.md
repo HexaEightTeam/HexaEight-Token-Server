@@ -1,14 +1,15 @@
-# ARM x64 - Raspberry pi
+# [ARM x64 - Raspberry pi](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux-arm.zip)
 
-## Download Link : [ARM (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-arm/HexaEight_Token_Issuer-linux-arm.zip) 
+## Download Link : [ARM (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux-arm.zip) 
 
 Quick Start:
 
 1. Create a user, login as the user, set the umask  and run the below commands
 
+
 ```
 umask 077
-curl "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-arm/HexaEight_Token_Issuer-linux-arm.zip" -O -J -L
+curl "https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux-arm.zip" -O -J -L
 unzip ./HexaEight_Token_Issuer-linux-arm.zip
 chmod 700 tokenserver/HexaEight_Token_Issuer
 
