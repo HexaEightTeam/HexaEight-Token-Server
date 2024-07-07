@@ -58,4 +58,26 @@ su - hexa8server -c '$HOME/tokenserver/cleanup.sh &'
   }                                          
 } 
 ```
+### Verification Details
+```
+-----------------------------------------------------------
+FileName : HexaEight_Token_Issuer
+VerifiedHash : 3039388fc47a42a69bbba5f965ddbf362f37e2ea1d95f29ef6dee232d4bdcf479587e848c98f9938a49cfd829df604e018f0ac6602ca6cff4edcf2409475c249
+HashAlgorithm : SHA512
+Description : HexaEight_Token_Issuer 1.6.801
+Publisher : AUTH.HEXAEIGHT.COM
+Issuer : AUTH.HEXAEIGHT.COM
+Certificate Issued At : 28672097
+Certificate Expiry At : 28931295
+AuthenticData : This File or Sofware [HexaEight_Token_Issuer] has been verified successfully.
+
+The Hash can also be manually verified by combining the following properties below:
+FILENAME followed By HASHOFTHISFILE followed by DESCRIPTION
+The above SHA512 Hash should match with 3039388fc47a42a69bbba5f965ddbf362f37e2ea1d95f29ef6dee232d4bdcf479587e848c98f9938a49cfd829df604e018f0ac6602ca6cff4edcf2409475c249
+
+Note: This message wont be displayed if this File or Software was altered or tampered.
+This is a Software Publisher Certificate Published by AUTH.HEXAEIGHT.COM and Certified by AUTH.HEXAEIGHT.COM
+This message was generated at 07/07/2024 05:03:01
+-----------------------------------------------------------
+```
 
