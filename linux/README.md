@@ -1,4 +1,4 @@
-# [Linux x64]((https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip]) 
+# [Linux x64](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) 
 
 ## Download Link : [Linux (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) 
 
