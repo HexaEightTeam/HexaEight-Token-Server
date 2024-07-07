@@ -1,6 +1,6 @@
-# macOSX 
+# [macOSX](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/mac.zip)
 
-## Download Link : [macOSX (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-mac-OSX.zip) 
+## Download Link : [macOSX (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/mac.zip) 
 
 Quick Start:
 
@@ -8,7 +8,7 @@ Quick Start:
 
 ```
 umask 077
-curl "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/macOSX/HexaEight_Token_Issuer-mac-OSX.zip" -O -J -L
+curl "https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/mac.zip" -O -J -L
 unzip ./HexaEight_Token_Issuer-mac-OSX.zip
 chmod 700 tokenserver/HexaEight_Token_Issuer
 
