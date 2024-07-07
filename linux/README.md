@@ -1,6 +1,6 @@
-# [Linux x64](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) 
+# [Linux x64](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux.zip) 
 
-## Download Link : [Linux (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip) 
+## Download Link : [Linux (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux.zip) 
 
 Quick Start:
 
