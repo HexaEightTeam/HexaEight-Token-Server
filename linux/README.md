@@ -8,7 +8,7 @@ Quick Start:
 
 ```
 umask 077
-curl "[https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/linux-x64/HexaEight_Token_Issuer-linux-x64.zip](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux.zip)](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux.zip)" -O -J -L
+curl "https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/linux.zip" -O -J -L
 unzip ./HexaEight_Token_Issuer-linux-x64.zip
 chmod 700 tokenserver/HexaEight_Token_Issuer
 chmod 700 tokenserver/*.sh
