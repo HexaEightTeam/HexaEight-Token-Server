@@ -1,7 +1,8 @@
-#### [Windows (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip) 
+#### [Windows (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/win-64.zip) 
 # Windows x64 
 
-## Download Link : [Windows (64 bit version)](https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip) 
+
+## Download Link : [Windows (64 bit version)](https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/win-64.zip) 
 
 Quick Start:
 
