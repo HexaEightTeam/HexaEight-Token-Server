@@ -10,7 +10,7 @@ Quick Start:
 
 
 ```
-Invoke-WebRequest "https://www.hexaeight.com/downloads/HexaEight_Token_Issuer/win-x64/HexaEight_Token_Issuer-win-x64.zip" -UseBasicParsing -Outfile HexaEight_Token_Issuer-win-x64.zip
+Invoke-WebRequest "https://github.com/HexaEightTeam/HexaEight-Token-Server/releases/download/Production-1.6.8/win-64.zip" -UseBasicParsing -Outfile HexaEight_Token_Issuer-win-x64.zip
 Expand-Archive .\HexaEight_Token_Issuer-win-x64.zip -DestinationPath .
 cd tokenserver
 
